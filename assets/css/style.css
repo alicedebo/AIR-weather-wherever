@@ -1,0 +1,47 @@
+h1 {
+    background: linear-gradient(45deg, #1a53ff, #00134d);
+    color: white;
+    text-align: center;
+    padding: 1%;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+textarea {
+    resize: none;
+    font-size: 20px;
+    border-radius: 3px;
+    width: 235px;
+    height: 25px;
+}
+
+.searchbtn {
+    width: 243px;
+    background-color: #33ccff;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #e9e9f8;
+}
+
+hr {
+    border: 0; border-top: 1px solid black;
+    margin-top: 14px;
+}
+
+.citybtn {
+    width: 243px;
+    background-color: rgb(202, 200, 200);
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid rgb(202, 200, 200);
+    font-weight: bolder;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
