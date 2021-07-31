@@ -11,7 +11,7 @@
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-    <aside class="container">
+    <aside class="container flex">
         <h2>Search for a city:</h2>
         <!-- <form class="city" >
             <input type="text" id="fnamerows="1" cols="20"" name="fname" placeholder="Denver" width="48" height="48"><br>
@@ -28,9 +28,20 @@
           <button class="citybtn">Denver</button>
           <button class="citybtn">Atlanta</button>
     </aside>
-    <div class="weather-details">
+    <div class="weather-details flex">
         <div class="todays-details">
-           <h3>Atlanta (3/30/2021)</h3> 
+             <div>
+           <h3 class="city-name-and-date">Atlanta (3/30/2021)</h3><br>
+           <p class="temperature">Temp:</p>
+           <p class="wind">Wind:</p>
+           <p class="humidity">Humidity:</p>
+           <p class="uv">UV Index:</p><br>
+         </div>  
+        </div>
+    </div>
+    <div class="five-days flex">
+        <div class="five-days-boxes">
+        <h3>5-Day Forecast:</h3>
         </div>
     </div>
 </body>
