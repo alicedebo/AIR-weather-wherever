@@ -58,10 +58,38 @@ h3 {
     border: black solid 1px;
     display: flex;
     width: 75vw;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
     padding-left: 10px;
 }
 
 p {
     font-size: 18px;
+}
+
+.five-days-boxes {
+    border: black solid 1px;
+    display: flex;
+    /* padding-bottom: 20px; */
+    padding-left: 10px;
+    width: 75vw;
+}
+
+.weather {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.container-days {
+    border: black solid 1px;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+}
+
+.day1, .day2, .day3, .day4, .day5 {
+    border: black solid 1px;
+    width: 25vh;
+    padding-bottom: 200px;
+    background-color: #778499;
+    color: white;
 }
