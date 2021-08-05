@@ -13,27 +13,29 @@
     </header>
     <aside class="container flex">
         <h2>Search for a city:</h2>
-          <textarea placeholder="Denver"></textarea><br>
-          <button class="searchbtn">Search</button>
+        <form class="box ">
+            <div class="field">
+                <label class="label ">Search for City:</label>
+                <div class="control">
+                    <input class="inputValue" type="city" placeholder="Denver">
+                </div>
+            </div>
+        </form>
+          <button id="searchBtn">Search</button>
           <hr style="width:245px; text-align:left; margin-left:0;">
-          <button class="citybtn">Austin</button>
-          <button class="citybtn">Chicago</button>
-          <button class="citybtn">New York</button>
-          <button class="citybtn">Orlando</button>
-          <button class="citybtn">San Francisco</button>
-          <button class="citybtn">Seattle</button>
-          <button class="citybtn">Denver</button>
-          <button class="citybtn">Atlanta</button>
+          <button class="history"></button>
     </aside>
     <div class="weather">
     <div class="weather-details flex">
         <div class="todays-details">
              <div>
-           <h3 class="city-name-and-date">Atlanta (3/30/2021)</h3><br>
-           <p class="temperature">Temp:</p>
-           <p class="wind">Wind:</p>
-           <p class="humidity">Humidity:</p>
-           <p class="uv">UV Index:</p><br>
+           <h3 id="city-name"></h3><br>
+           <p id="date"></p>
+           <p id="icon"></p>
+           <p id="temperature"></p>
+           <p id="wind"></p>
+           <p id="humidity"></p>
+           <p id="uv" class="uv"></p><br>
          </div>  
         </div>
     </div>
@@ -41,15 +43,17 @@
         <div class="five-days-boxes">
         <h3>5-Day Forecast:</h3>
      </div>   
-        <div class= "container-days">
-        <p class="day1">8/1/2021</br>icon</br>temp</br>Wind</br>humidity</p>
-        <p class="day2">8/2/2021</br>icon</br>temp</br>Wind</br>humidity</p>
-        <p class="day3">8/3/2021</br>icon</br>temp</br>Wind</br>humidity</p>
-        <p class="day4">8/4/2021</br>icon</br>temp</br>Wind</br>humidity</p>
-        <p class="day5">8/5/2021</br>icon</br>temp</br>Wind</br>humidity</p>
+        <div id= "savedList">
+        <p class="day1"></p>
+        <p class="day2"></p>
+        <p class="day3"></p>
+        <p class="day4"></p>
+        <p class="day5"></p>
         </div> 
     </div>
    </div> 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="./assets/js/script.js"></script>
 </html>

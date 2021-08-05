@@ -60,6 +60,7 @@ h3 {
     width: 75vw;
     /* padding-bottom: 20px; */
     padding-left: 10px;
+    background-color: aquamarine;
 }
 
 p {
@@ -79,7 +80,7 @@ p {
     flex-direction: column;
 }
 
-.container-days {
+#savedList {
     border: black solid 1px;
     flex-direction: row;
     display: flex;
