@@ -61,10 +61,12 @@ h3 {
     /* padding-bottom: 20px; */
     padding-left: 10px;
     background-color: aquamarine;
+    color: black;
 }
 
 p {
     font-size: 18px;
+    color: black;
 }
 
 .five-days-boxes {
@@ -91,6 +93,6 @@ p {
     border: black solid 1px;
     width: 25vh;
     padding-bottom: 200px;
-    background-color: #778499;
+    background-color: aquamarine;
     color: white;
 }
