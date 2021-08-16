@@ -92,7 +92,7 @@ p {
 .day1, .day2, .day3, .day4, .day5 {
     border: black solid 1px;
     width: 25vh;
-    padding-bottom: 200px;
+    /* padding-bottom: 200px; */
     background-color: aquamarine;
     color: white;
 }
