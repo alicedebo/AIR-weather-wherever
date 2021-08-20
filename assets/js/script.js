@@ -30,20 +30,16 @@ function renderHistory(){
    var btn = document.createElement('button');
    btn.setAttribute('type', 'button');
    btn.classList.add('history-btn', 'btn-history');
-
    btn.setAttribute('data-search', searchHistory[i]);
    btn.textContent= searchHistory[i];
    historyContainer.append(btn);
-
-    
   }
 }
 
-function addToHistory(){
-  if(searchHistory.indexOf(inputValue.value) !== -1){
-    return;
-  }
-  searchHistory.push(inputValue.value);
+function addToHistory(city){
+  searchHistory.push(city);
+  //set-class object, use new syntax to create instance (takes values, unique/duplicates)
+  searchHistory = [... new Set(searchHistory)];
   localStorage.setItem('search-history',JSON.stringify(searchHistory));
   renderHistory();
 }
@@ -77,7 +73,7 @@ function weatherSearch(inputVal){
   fetch("http://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=f35e006af25338731b8e7c0036ad0a11")
     .then((response) => response.json() )
     .then((data) => {
-      
+      addToHistory(data.name)
       icon.innerHTML = "";
       const currentDate = new Date(data.dt * 1000);
       const day = currentDate.getDate();
@@ -92,7 +88,6 @@ function weatherSearch(inputVal){
       function yes() {
         // var cityName = data.name;
         var tempKelvin = data.main.temp;
-        //wtf is going on here
         var currentWind = data.wind.speed;
         var humidityValue = data.main.humidity;
         // var uvIndex = data["current"]["uvi"]
@@ -170,7 +165,6 @@ function weatherSearch(inputVal){
 startSearchHistory();
 searchBtn.addEventListener("click", function (event) {
  handleFormSubmit(event);
-  addToHistory();
 });
 
 historyContainer.addEventListener('click',HandleHistoryClick);
