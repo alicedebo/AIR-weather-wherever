@@ -70,7 +70,7 @@ function HandleHistoryClick(e){
 }
 
 function weatherSearch(inputVal){
-  fetch("http://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=f35e006af25338731b8e7c0036ad0a11")
+  fetch("https://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=f35e006af25338731b8e7c0036ad0a11")
     .then((response) => response.json() )
     .then((data) => {
       addToHistory(data.name)
@@ -84,7 +84,7 @@ function weatherSearch(inputVal){
 
        
   
-      var weatherIconUrl = "http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png";
+      var weatherIconUrl = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png";
       function yes() {
         // var cityName = data.name;
         var tempKelvin = data.main.temp;
@@ -108,7 +108,7 @@ function weatherSearch(inputVal){
   
         icon.append(imageIcon);
       }
-      fetch("http://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=f35e006af25338731b8e7c0036ad0a11")
+      fetch("https://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=f35e006af25338731b8e7c0036ad0a11")
         .then(function (response) {
           return response.json();
         })
