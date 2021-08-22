@@ -31,7 +31,7 @@ hr {
     margin-top: 14px;
 }
 
-.citybtn {
+/* .citybtn {
     width: 243px;
     background-color: rgb(202, 200, 200);
     margin-top: 10px;
@@ -39,7 +39,7 @@ hr {
     border-radius: 5px;
     border: 1px solid rgb(202, 200, 200);
     font-weight: bolder;
-}
+} */
 
 .container {
     display: flex;
@@ -60,7 +60,7 @@ h3 {
     width: 75vw;
     /* padding-bottom: 20px; */
     padding-left: 10px;
-    background-color: aquamarine;
+    background-color: #3399ff;
     color: black;
 }
 
@@ -93,6 +93,24 @@ p {
     border: black solid 1px;
     width: 25vh;
     /* padding-bottom: 200px; */
-    background-color: aquamarine;
+    background-color: #3399ff;
     color: white;
+}
+
+.btn-history {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    width: 95%;
+    align-items: center;
+    background-color: blue;
+    color: white;
+    font-size: 100%;
+}
+
+.btn-history:hover {
+    cursor: grab;
+    color: #33ccff;
+    background-color: #00134d;
 }

@@ -73,7 +73,7 @@ function weatherSearch(inputVal){
   fetch("https://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=f35e006af25338731b8e7c0036ad0a11")
     .then((response) => response.json() )
     .then((data) => {
-      addToHistory(data.name)
+      addToHistory(data.name);
       icon.innerHTML = "";
       const currentDate = new Date(data.dt * 1000);
       const day = currentDate.getDate();
@@ -96,7 +96,9 @@ function weatherSearch(inputVal){
         var tempFahrenheit = tempCelsius * (9 / 5) + 32;
   
         var Fahrenheit = Math.floor(tempFahrenheit);
-  
+        // let lat = data.coord.lat;
+        // let lon = data.coord.lon;
+        // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=9f4c68a8f9a7e6ace879b24363e78f05l"); 
         // currentCity.innerHTML = cityName;
         currentTemp.innerHTML = "Temp: " + Fahrenheit + "°F";
         wind.innerHTML = "Wind: " + currentWind + "mph";
@@ -108,13 +110,31 @@ function weatherSearch(inputVal){
   
         icon.append(imageIcon);
       }
+      // fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data[0].lat}&lon=${data[0].lon}&appid=9f4c68a8f9a7e6ace879b24363e78f05&units=imperial`)
       fetch("https://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=f35e006af25338731b8e7c0036ad0a11")
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
           yes(data);
-          console.log(data);
+          const {lat, lon} = data.coord;
+          //uvindex
+          fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=f35e006af25338731b8e7c0036ad0a11") 
+          .then(function (response) {
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+            const uvIndex = data.current.uvi;
+            currentUV.innerHTML = "UV Index: " + uvIndex;
+            if (data.current.uvi <= 4 ) {
+              currentUV.setAttribute("style", "background-color: green; color: white");
+          } else if (data.current.uvi <= 8) {
+              currentUV.setAttribute("style", "background-color: yellow; color: white");
+          } else if (data.current.uvi > 8) {
+              currentUV.setAttribute("style", "background-color: red; color: white");
+          }
+          });
           let cityID = data.id;
           let forecastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=f35e006af25338731b8e7c0036ad0a11";
           fetch(forecastQueryURL)
@@ -140,6 +160,8 @@ function weatherSearch(inputVal){
                   forecastMonth + "/" + forecastDay + "/" + forecastYear;
                 forecastEls[i].append(forecastDateEl);
                 // Icon for current weather
+                
+                // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=$" + lon + "&appid=9f4c68a8f9a7e6ace879b24363e78f05&units=imperial"); 
                 const forecastWeatherEl = document.createElement("img");
                 forecastWeatherEl.setAttribute("src", "https://openweathermap.org/img/wn/" + data.list[forecastIndex].weather[0].icon + "@2x.png");
                 forecastWeatherEl.setAttribute("alt", data.list[forecastIndex].weather[0].description);
@@ -156,7 +178,9 @@ function weatherSearch(inputVal){
                 const forecastHumidityEl = document.createElement("p");
                 forecastHumidityEl.innerHTML = "Humidity: " + data.list[forecastIndex].main.humidity + "%";
                 forecastEls[i].append(forecastHumidityEl);
+                // fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=9f4c68a8f9a7e6ace879b24363e78f05&units=imperial`);   
               }
+                           
             });
         });
     });
