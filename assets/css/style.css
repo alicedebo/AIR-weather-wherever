@@ -31,16 +31,6 @@ hr {
     margin-top: 14px;
 }
 
-/* .citybtn {
-    width: 243px;
-    background-color: rgb(202, 200, 200);
-    margin-top: 10px;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid rgb(202, 200, 200);
-    font-weight: bolder;
-} */
-
 .container {
     display: flex;
     flex-direction: column;
@@ -89,7 +79,7 @@ p {
     justify-content: space-around;
 }
 
-.day1, .day2, .day3, .day4, .day5 {
+.forecast {
     border: black solid 1px;
     width: 25vh;
     /* padding-bottom: 200px; */
